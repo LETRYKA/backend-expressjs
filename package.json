@@ -2,10 +2,11 @@
   "name": "fooddelivery",
   "version": "1.0.0",
   "description": "food delivery service",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon app.js"
   },
   "author": "ARYKA",
   "license": "ISC",
