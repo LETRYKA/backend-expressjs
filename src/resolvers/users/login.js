@@ -1,4 +1,5 @@
 import fs from "fs";
+import jwt from "jsonwebtoken";
 
 export const Login = (req, res) => {
   const { id, password } = req.body;
@@ -11,6 +12,8 @@ export const Login = (req, res) => {
   if (user) {
     if (password === user.password) {
       res.send("Authorized");
+      var token = jwt.sign({ user: user.id }, "topsecret");
+      console.log(token);
     } else {
       res.send("Unauthorized");
     }
@@ -18,4 +21,3 @@ export const Login = (req, res) => {
     res.send("User not found");
   }
 };
- 
