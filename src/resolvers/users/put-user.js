@@ -7,7 +7,11 @@ export const editUser = (req, res) => {
 
   const updatedUsers = users.map((user) => {
     if (user.id === req.user.user) {
-      return { ...user, username, password };
+      return {
+        ...user,
+        username: username !== undefined ? username : user.username,
+        password: password !== undefined ? password : user.password,
+      };
     }
     return user;
   });
