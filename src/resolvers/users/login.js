@@ -12,7 +12,7 @@ export const Login = (req, res) => {
   if (user) {
     if (password === user.password) {
       res.send("Authorized");
-      var token = jwt.sign({ user: user.id }, "topsecret");
+      var token = jwt.sign({ user: user.id }, process.env.SECRET_KEY);
       console.log(token);
     } else {
       res.send("Unauthorized");
