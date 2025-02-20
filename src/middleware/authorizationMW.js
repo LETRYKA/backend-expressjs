@@ -8,6 +8,6 @@ export const authorizationMW = (req, res, next) => {
 
     next();
   } catch {
-    res.send("Unauthorized");
+    res.status(401).json({ message: "Unauthorized" });
   }
 };

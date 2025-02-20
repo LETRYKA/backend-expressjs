@@ -5,7 +5,7 @@ export const createMovie = (req, res) => {
   const rawUserData = fs.readFileSync(`src/db/movies.json`);
   const movies = JSON.parse(rawUserData);
 
-  if (title && poster_path && release_date) {
+  if (title && poster_path && release_date && id) {
     const movie = movies.find((movie) => movie.id === id);
     if (movie === undefined) {
       movies.push(req.body);
